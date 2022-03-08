@@ -1,6 +1,6 @@
-import urwid
+import urwid as uw
 
-text = urwid.Text(u'Hello World')
-fill = urwid.Filler(text, 'top')
-loop = urwid.MainLoop(fill)
+text = uw.Text(u'Hello World')
+fill = uw.Filler(text, 'top')
+loop = uw.MainLoop(fill)
 loop.run()

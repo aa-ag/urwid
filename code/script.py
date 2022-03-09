@@ -11,15 +11,28 @@ def exit_on_q(key):
         raise uw.ExitMainLoop()
 
 palette = [
-    ('banner', 'black', 'light gray'),
-    ('streak', 'black', 'dark red'),
-    ('bg', 'black', 'dark blue'),
+    ('banner', '', '', '', '#ffa', '#60d'),
+    ('streak', '', '', '', 'g50', '#60a'),
+    ('inside', '', '', '', 'g38', '#808'),
+    ('outside', '', '', '', 'g27', '#a06'),
+    ('bg', '', '', '', 'g7', '#d06'),
 ]
 
 
-text = uw.Text(('banner', u'Hello World'), align='center')
-map1 = uw.AttrMap(text, 'streak')
-fill = uw.Filler(map1)
-map2 = uw.AttrMap(fill, 'bg')
-loop = uw.MainLoop(map2, palette, unhandled_input=exit_on_q)
+placeholder = uw.SolidFill()
+loop = uw.MainLoop(placeholder, palette, unhandled_input=exit_on_q)
+loop.screen.set_terminal_properties(colors=256)
+loop.widget = uw.AttrMap(placeholder, 'bg')
+loop.widget.original_widget = uw.Filler(uw.Pile([]))
+
+div = uw.Divider()
+outside = uw.AttrMap(div, 'outside')
+inside = uw.AttrMap(div, 'inside')
+txt = uw.Text(('banner', u" Hello World "), align='center')
+streak = uw.AttrMap(txt, 'streak')
+pile = loop.widget.base_widget # .base_widget skips the decorations
+for item in [outside, inside, streak, inside, outside]:
+    pile.contents.append((item, pile.options()))
+
+
 loop.run()

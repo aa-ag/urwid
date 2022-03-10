@@ -6,7 +6,7 @@ import urwid as uw
 palette = [('I say', 'default,bold', 'default', 'bold'),]
 ask = uw.Edit(('I say', u"What is your name?\n"))
 reply = uw.Text(u"")
-button = uw.Button(u'Exit')
+button = uw.Button(u'Quit')
 div = uw.Divider()
 pile = uw.Pile([ask, div, reply, div, button])
 top = uw.Filler(pile, valign='top')
@@ -21,6 +21,10 @@ def on_ask_change(edit, new_edit_text):
 
 def on_exit_clicked(button):
     raise uw.ExitMainLoop()
-    
+
 
 ############------------ DRIVER CODE ------------############
+uw.connect_signal(ask, 'change', on_ask_change)
+uw.connect_signal(button, 'click', on_exit_clicked)
+
+uw.MainLoop(top, palette).run()

@@ -13,6 +13,9 @@ top = uw.Filler(pile, valign='top')
 
 
 ############------------ FUNCTION(S) ------------############
-
+def on_ask_change(edit, new_edit_text):
+    reply.set_text(
+        ('I say', u"Nice to meet you, %s" % new_edit_text)
+    )
 
 ############------------ DRIVER CODE ------------############

@@ -18,4 +18,9 @@ def on_ask_change(edit, new_edit_text):
         ('I say', u"Nice to meet you, %s" % new_edit_text)
     )
 
+
+def on_exit_clicked(button):
+    raise uw.ExitMainLoop()
+    
+
 ############------------ DRIVER CODE ------------############

@@ -43,11 +43,13 @@ class ConversationListBox(uw.ListBox):
         if not name:
             raise uw.ExitMainLoop()
 
+        # replace / add response
         self.focus.contents[1:] = [
             (answer(name), self.focus.options())
         ]
         position = self.focus_position
 
+        # add new question
         self.body.insert(position + 1, question())
         self.focus_position = position + 1
 

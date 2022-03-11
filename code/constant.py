@@ -10,7 +10,7 @@ def ask_question():
     return uw.Pile(
         [uw.Edit(
         ('I say', 
-        u"What's your name?"
+        u"What's your name? \n..."
         )
         )]
     )
@@ -19,7 +19,7 @@ def ask_question():
 def provide_answer(name):
     return uw.Text(
         ('I say', 
-        u"Great meeting you, " + name + "\n"
+        u"Great meeting you, " + name + " \n"
         )
     )
 

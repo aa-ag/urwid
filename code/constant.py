@@ -25,7 +25,31 @@ def provide_answer():
 
 
 class ConversationListBox(uw.ListBox):
-    pass
+    def __init__(self):
+        body = uw.SimpleFocusListWalker(
+            [question()]
+        )
+        super(ConversationListBox, self).__init__(body)
+
+    def keypress(self, size, key):
+        key = super(
+            ConversationListBox, self
+            ).keypress(size, key)
+
+        if key != 'enter':
+            return key
+
+        name = self.focus[0].edit_text
+        if not name:
+            raise uw.ExitMainLoop()
+
+        self.focus.contents[1:] = [
+            (answer(name), self.focus.options())
+        ]
+        position = self.focus_position
+
+        self.body.insert(position + 1, question())
+        self.focus_position = position + 1
 
 
 ############------------ DRIVER CODE ------------############

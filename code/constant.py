@@ -16,7 +16,7 @@ def ask_question():
     )
 
 
-def provide_answer():
+def provide_answer(name):
     return uw.Text(
         ('I say', 
         u"Great meeting you, " + name + "\n"
@@ -27,7 +27,7 @@ def provide_answer():
 class ConversationListBox(uw.ListBox):
     def __init__(self):
         body = uw.SimpleFocusListWalker(
-            [question()]
+            [ask_question()]
         )
         super(ConversationListBox, self).__init__(body)
 
@@ -45,13 +45,15 @@ class ConversationListBox(uw.ListBox):
 
         # replace / add response
         self.focus.contents[1:] = [
-            (answer(name), self.focus.options())
+            (provide_answer(name), self.focus.options())
         ]
         position = self.focus_position
 
         # add new question
-        self.body.insert(position + 1, question())
+        self.body.insert(position + 1, ask_question())
         self.focus_position = position + 1
 
 
 ############------------ DRIVER CODE ------------############
+palette = [('I say', 'default,bold', 'default'),]
+uw.MainLoop(ConversationListBox(), palette).run()

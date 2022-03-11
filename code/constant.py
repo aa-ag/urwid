@@ -15,12 +15,17 @@ def ask_question():
         )]
     )
 
+
 def provide_answer():
     return uw.Text(
         ('I say', 
         u"Great meeting you, " + name + "\n"
         )
     )
+
+
+class ConversationListBox(uw.ListBox):
+    pass
 
 
 ############------------ DRIVER CODE ------------############

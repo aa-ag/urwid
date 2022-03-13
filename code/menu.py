@@ -27,8 +27,22 @@ def menu(title, options):
     return uw.ListBox(uw.SimpleFocusListWalker(body))
 
 
-def item_chosen():
-    pass
+def item_chosen(button, option):
+    response = uw.Text(
+        [u'You chose',
+        option, 
+        u'\n']
+    )
+    done = uw.Button(u'Ok')
+    uw.connect_signal(
+        done, 
+        'click',
+        exit_program
+    )
+    main.original_widget = uw.Filler(uw.Pile(
+        response,
+        uw.AttrMap(done, None, focus_map='reversed')
+    ))
 
 
 def exit_program(button):

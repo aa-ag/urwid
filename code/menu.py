@@ -9,6 +9,16 @@ options = u'A B C D'.split()
 
 
 ############------------ FUNCTION(S) ------------############
+def menu():
+    pass
+
+
+def item_chose():
+    pass
+
+
+def exit_program():
+    pass
 
 
 ############------------ DRIVER CODE ------------############

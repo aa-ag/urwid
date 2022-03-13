@@ -50,4 +50,19 @@ def exit_program(button):
 
 
 ############------------ DRIVER CODE ------------############
-main = uw.Padding(menu(u'Pythons', options), left=2, right=2)
+main = uw.Padding(
+    menu(u'Pythons', options),
+    left=2,
+    right=2
+)
+
+top = uw.Overlay(
+    main,
+    uw.SolidFill(u'\N{MEDIUM SHADE}'),
+    align='center',
+    width=('relative', 60)
+    valign='middle',
+    height=('relative', 60),
+    min_width=20,
+    min_height=9
+)

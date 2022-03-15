@@ -44,4 +44,19 @@ def exit_program(button):
     raise uw.ExitMainLoop()
 
 
+menu_top = menu(u'Main Menu', [
+    sub_menu(u'Applications', [
+        sub_menu(u'Accessories', [
+            menu_button(u'Text Editor', item_chosen),
+            menu_button(u'Terminal', item_chosen),
+        ]),
+    ]),
+    sub_menu(u'System', [
+        sub_menu(u'Preferences', [
+            menu_button(u'Appearance', item_chosen),
+        ]),
+        menu_button(u'Lock Screen', item_chosen),
+    ]),
+])
+
 ############------------ DRIVER CODE ------------############

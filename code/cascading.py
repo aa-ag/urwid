@@ -94,3 +94,4 @@ class CascadingBoxes(uw.WidgetPlaceholder):
         
 
 top = CascadingBoxes(menu_top)
+uw.MainLoop(top, palette=[('reversed', 'standout', '')]).run()

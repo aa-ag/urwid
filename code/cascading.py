@@ -92,3 +92,5 @@ class CascadingBoxes(uw.WidgetPlaceholder):
         else:
             return super(CascadingBoxes, self).keypress(size, key)
         
+
+top = CascadingBoxes(menu_top)

@@ -1,6 +1,3 @@
-from email.mime import base
-
-
 ############------------ IMPORTS ------------############
 import urwid as uw
 
@@ -60,7 +57,7 @@ top = uw.Overlay(
     main,
     uw.SolidFill(u'\N{MEDIUM SHADE}'),
     align='center',
-    width=('relative', 60)
+    width=('relative', 60),
     valign='middle',
     height=('relative', 60),
     min_width=20,

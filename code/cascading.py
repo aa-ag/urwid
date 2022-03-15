@@ -40,4 +40,8 @@ def item_chosen(button):
     return uw.ListBox(uw.SimpleFocusListWalker(body))
 
 
+def exit_program(button):
+    raise uw.ExitMainLoop()
+
+
 ############------------ DRIVER CODE ------------############

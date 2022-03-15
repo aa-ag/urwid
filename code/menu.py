@@ -63,3 +63,7 @@ top = uw.Overlay(
     min_width=20,
     min_height=9
 )
+
+uw.MainLoop(top, palette=[(
+    'reversed', 'standout', ''
+)]).run()

@@ -48,7 +48,7 @@ def exit_program(button):
 
 ############------------ DRIVER CODE ------------############
 main = uw.Padding(
-    menu(u'Pythons', options),
+    menu(u'Options\'s Menu', options),
     left=2,
     right=2
 )

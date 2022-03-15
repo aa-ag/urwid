@@ -25,4 +25,12 @@ def sub_menu(caption, options):
     )
 
 
+def menu(title, options):
+    body = [uw.Text(title), uw.Divider()]
+    body.extend(options)
+    return uw.ListBox(
+        uw.SimpleFocusListWalker(body)
+    )
+
+    
 ############------------ DRIVER CODE ------------############

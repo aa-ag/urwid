@@ -1,8 +1,6 @@
 ############------------ IMPORTS ------------############
 import urwid as uw
 
-from code.menu import exit_program
-
 
 ############------------ FUNCTION(S) ------------############
 def menu_button(caption, callback):
@@ -44,6 +42,7 @@ def exit_program(button):
     raise uw.ExitMainLoop()
 
 
+############------------ GLOBAL VARIABLE(S) ------------############
 menu_top = menu(u'Main Menu', [
     sub_menu(u'Applications', [
         sub_menu(u'Accessories', [

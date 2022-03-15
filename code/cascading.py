@@ -1,6 +1,7 @@
 ############------------ IMPORTS ------------############
-from importlib.resources import contents
 import urwid as uw
+
+from code.menu import exit_program
 
 
 ############------------ FUNCTION(S) ------------############
@@ -32,5 +33,11 @@ def menu(title, options):
         uw.SimpleFocusListWalker(body)
     )
 
-    
+
+def item_chosen(button):
+    response = uw.Text([u'You chose', button.label, u'\n'])
+    done = menu_button(u'Ok', exit_program)
+    return uw.ListBox(uw.SimpleFocusListWalker(body))
+
+
 ############------------ DRIVER CODE ------------############

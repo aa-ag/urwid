@@ -84,4 +84,11 @@ class CascadingBoxes(uw.WidgetPlaceholder):
             bottom = (self.max_box_levels - self.box_level - 1) * 2
         )
         self.box_level += 1
+
+    def keypress(self, size, key):
+        if key == 'esc' and self.box_level > 1:
+            self.original_widget = self.original_widget[0]
+            self.box_level -= 1
+        else:
+            return super(CascadingBoxes, self).keypress(size, key)
         

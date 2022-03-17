@@ -35,6 +35,15 @@ class SubMenu(uw.WidgetWrap):
     def open_menu(self, button):
         top.open_box(self.menu)
 
+palette = [
+    (None,  'light gray', 'black'),
+    ('heading', 'black', 'light gray'),
+    ('line', 'black', 'light gray'),
+    ('options', 'dark gray', 'black'),
+    ('focus heading', 'white', 'dark red'),
+    ('focus line', 'black', 'dark red'),
+    ('focus options', 'black', 'light gray'),
+    ('selected', 'white', 'dark blue')]
 
 class HorizontalBoxes(uw.Columns):
     pass

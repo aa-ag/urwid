@@ -41,3 +41,4 @@ class HorizontalBoxes(uw.Columns):
 
 
 ############------------ DRIVER CODE ------------############
+top = HorizontalBoxes()

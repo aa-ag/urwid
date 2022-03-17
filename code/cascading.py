@@ -36,7 +36,10 @@ def menu(title, options):
 def item_chosen(button):
     response = uw.Text([u'You chose', button.label, u'\n'])
     done = menu_button(u'Ok', exit_program)
-    return uw.ListBox(uw.SimpleFocusListWalker(body))
+    top.open_box(uw.Filler(uw.Pile([
+        response,
+        done
+    ])))
 
 
 def exit_program(button):

@@ -32,4 +32,8 @@ class SubMenu(uw.WidgetWrap):
 
         self.menu = uw.AttrMap(listbox, 'options')
 
+    def open_menu(self, button):
+        top.open_box(self.menu)
+
+        
 ############------------ DRIVER CODE ------------############

@@ -35,5 +35,9 @@ class SubMenu(uw.WidgetWrap):
     def open_menu(self, button):
         top.open_box(self.menu)
 
-        
+
+class HorizontalBoxes(uw.Columns):
+    pass
+
+
 ############------------ DRIVER CODE ------------############

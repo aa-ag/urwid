@@ -46,7 +46,8 @@ palette = [
     ('selected', 'white', 'dark blue')]
 
 class HorizontalBoxes(uw.Columns):
-    pass
+    def __init__(self):
+        super(HorizontalBoxes, self).__init__([], dividechars=1)
 
 
 ############------------ DRIVER CODE ------------############

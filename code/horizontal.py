@@ -37,7 +37,11 @@ class SubMenu(uw.WidgetWrap):
 
 
 class Choice(uw.WidgetWrap):
-    pass
+    def __init__(self, caption):
+        super(Choice, self).__init__(
+            MenuButton(caption, self.item_chosen)
+        )
+        self.caption = caption
 
 
 palette = [

@@ -52,6 +52,9 @@ class Choice(uw.WidgetWrap):
         top.open_box(uw.AttrMap(response_box, 'options'))
 
 
+def exit_program(key):
+    raise uw.ExitMainLoop()
+
 palette = [
     (None,  'light gray', 'black'),
     ('heading', 'black', 'light gray'),

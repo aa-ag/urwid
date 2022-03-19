@@ -99,4 +99,4 @@ class HorizontalBoxes(uw.Columns):
 ############------------ DRIVER CODE ------------############
 top = HorizontalBoxes()
 top.open_box(menu_top.menu)
-uw.MainLoop(uw.Filler(top, 'miller', 10), palette).run()
+uw.MainLoop(uw.Filler(top, 'middle', 10), palette).run()

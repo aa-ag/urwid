@@ -51,6 +51,22 @@ class Choice(uw.WidgetWrap):
 def exit_program(key):
     raise uw.ExitMainLoop()
 
+
+menu_top = SubMenu(u'Main Menu', [
+    SubMenu(u'Applications', [
+        SubMenu(u'Accessories', [
+            Choice(u'Text Editor'),
+            Choice(u'Terminal'),
+        ]),
+    ]),
+    SubMenu(u'System', [
+        SubMenu(u'Preferences', [
+            Choice(u'Appearance'),
+        ]),
+        Choice(u'Lock Screen'),
+    ]),
+])
+
 palette = [
     (None,  'light gray', 'black'),
     ('heading', 'black', 'light gray'),

@@ -77,6 +77,12 @@ palette = [
     ('focus options', 'black', 'light gray'),
     ('selected', 'white', 'dark blue')]
 
+focus_map = {
+    'heading': 'focus heading',
+    'options': 'focus options',
+    'line': 'focus line'
+}
+
 class HorizontalBoxes(uw.Columns):
     def __init__(self):
         super(HorizontalBoxes, self).__init__([], dividechars=1)

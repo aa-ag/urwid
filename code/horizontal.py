@@ -3,6 +3,8 @@ from subprocess import call
 from tkinter import Listbox
 import urwid as uw
 
+from code.cascading import exit_program
+
 
 ############------------ FUNCTION(S) ------------############
 class MenuButton(uw.Button):
@@ -42,6 +44,12 @@ class Choice(uw.WidgetWrap):
             MenuButton(caption, self.item_chosen)
         )
         self.caption = caption
+
+    def item_chosen(self, button):
+        response = uw.Text([u'  You chose ', self.caption, u'\n'])
+        done = MenuButton(u'Ok', exit_program)
+        response_box = uw.Filler(uw.Pile([response, done]))
+        top.open_box(uw.AttrMap(response_box, 'options'))
 
 
 palette = [

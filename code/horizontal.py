@@ -35,6 +35,11 @@ class SubMenu(uw.WidgetWrap):
     def open_menu(self, button):
         top.open_box(self.menu)
 
+
+class Choice(uw.WidgetWrap):
+    pass
+
+
 palette = [
     (None,  'light gray', 'black'),
     ('heading', 'black', 'light gray'),

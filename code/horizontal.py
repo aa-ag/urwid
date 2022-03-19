@@ -1,9 +1,5 @@
 ############------------ IMPORTS ------------############
-from subprocess import call
-from tkinter import Listbox
 import urwid as uw
-
-from code.cascading import exit_program
 
 
 ############------------ FUNCTION(S) ------------############

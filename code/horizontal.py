@@ -87,7 +87,7 @@ class HorizontalBoxes(uw.Columns):
     def __init__(self):
         super(HorizontalBoxes, self).__init__([], dividechars=1)
 
-    def open_boxes(self, box):
+    def open_box(self, box):
         if self.contents:
             del self.contents[self.focus_position + 1:]
         self.contents.append((uw.AttrMap(box, 'options', focus_map),

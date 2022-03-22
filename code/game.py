@@ -34,5 +34,9 @@ class Thing(uw.WidgetWrap):
             ActionButton([u" * take ", name], self.take_thing))
         self.name = name
 
+    def take_thing(self, button):
+        self._w = uw.Text(u" - %s (taken)" % self.name)
+        game.take_thing(self)
+
 
 ############------------ DRIVER CODE ------------############

@@ -23,10 +23,16 @@ class Place(uw.WidgetWrap):
         for child in choices:
             getattr(child, 'choices', []).insert(0, self)
         
-        
+
     def enter_place(self, button):
         game.update_place(self)
 
+
+class Thing(uw.WidgetWrap):
+    def __init__(self, name):
+        super(Thing, self).__init__(
+            ActionButton([u" * take ", name], self.take_thing))
+        self.name = name
 
 
 ############------------ DRIVER CODE ------------############

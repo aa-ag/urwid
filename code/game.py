@@ -39,4 +39,7 @@ class Thing(uw.WidgetWrap):
         game.take_thing(self)
 
 
+def exit_program(button):
+    raise uw.ExitMainLoop()
+
 ############------------ DRIVER CODE ------------############

@@ -22,6 +22,10 @@ class Place(uw.WidgetWrap):
         self.choices = choices
         for child in choices:
             getattr(child, 'choices', []).insert(0, self)
+        
+        
+    def enter_place(self, button):
+        game.update_place(self)
 
 
 
